@@ -15,6 +15,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v3
 
+    - name: Test TLS Connection
+      run: |
+        openssl s_client -starttls smtp -connect smtp.gmail.com:587
+
     - name: Send Email via Gmail
       uses: dawidd6/action-send-mail@v3
       with:
@@ -27,3 +31,6 @@ jobs:
         to: ${{ secrets.EMAIL_RECIPIENT }}
         from: ${{ secrets.GMAIL_USERNAME }}
         secure: true
+
+    - name: Debug Email Step
+      run: echo "Email sent successfully!"
