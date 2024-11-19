@@ -1,0 +1,29 @@
+name: Send Email on New MSI File
+
+on:
+  push:
+    paths:
+      - "**/*.msi"  # Trigger only when an MSI file is pushed
+    branches:
+      - main  # Adjust if your default branch is different
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Send Email via Gmail
+      uses: dawidd6/action-send-mail@v3
+      with:
+        server_address: smtp.gmail.com
+        server_port: 587
+        username: ${{ secrets.GMAIL_USERNAME }}
+        password: ${{ secrets.GMAIL_APP_PASSWORD }}
+        subject: "New MSI File Uploaded"
+        body: "A new MSI file has been added to the repository."
+        to: ${{ secrets.EMAIL_RECIPIENT }}
+        from: ${{ secrets.GMAIL_USERNAME }}
+        secure: true
