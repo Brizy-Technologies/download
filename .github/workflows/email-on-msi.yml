@@ -17,7 +17,7 @@ jobs:
 
     - name: Test TLS Connection
       run: |
-        openssl s_client -starttls smtp -connect smtp.gmail.com:587 -tls1_2
+        openssl s_client -starttls smtp -connect smtp.gmail.com:587 -tls1_3
 
     - name: Send Email via Gmail
       uses: dawidd6/action-send-mail@v3
