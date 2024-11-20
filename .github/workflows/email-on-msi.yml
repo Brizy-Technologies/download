@@ -3,7 +3,7 @@ name: Send Email on New MSI File
 on:
   push:
     paths:
-      - "**/*.msi"  # Trigger only when an MSI file is pushed
+      - "**/*.md"  # Trigger only when an MSI file is pushed
     branches:
       - main  # Adjust if your default branch is different
 
