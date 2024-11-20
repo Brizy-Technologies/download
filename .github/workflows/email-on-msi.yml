@@ -30,7 +30,7 @@ jobs:
         body: "A new MSI file has been added to the repository."
         to: ${{ secrets.EMAIL_RECIPIENT }}
         from: ${{ secrets.GMAIL_USERNAME }}
-        secure: true
+        secure: false
 
     - name: Debug Email Step
       run: echo "Email sent successfully!"
