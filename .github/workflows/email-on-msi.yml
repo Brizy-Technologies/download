@@ -18,7 +18,7 @@ jobs:
       id: read-file
       run: |
         FILE_CONTENT=$(cat notes.md | sed 's/["`]/\\&/g')
-        echo "file_content=$FILE_CONTENT" >> $GITHUB_ENV
+        echo "EMAIL_BODY=$(echo \"$FILE_CONTENT\")" >> $GITHUB_ENV
         
     - name: Test TLS Connection
       run: |
