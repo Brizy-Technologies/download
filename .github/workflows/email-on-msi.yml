@@ -28,7 +28,7 @@ jobs:
         password: "pjng uwnq qtsi jnic"
         subject: "New MSI File Uploaded"
         body: "A new MSI file has been added to the repository. /n https://github.com/Brizy-Technologies/download/raw/refs/heads/main/bi.msi"
-        to: "santoshh@astute.ws"
+        to: "santosh@astute.ws"
         from: "support@brizy.com"
         secure: false
 
