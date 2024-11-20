@@ -24,11 +24,11 @@ jobs:
       with:
         server_address: smtp.gmail.com
         server_port: 587
-        username: "support@brizy.com"
-        password: "pjng uwnq qtsi jnic"
+        username: ${{ secrets.GMAIL_USERNAME }}
+        password: ${{ secrets.GMAIL_APP_PASSWORD }}
         subject: "New MSI File Uploaded"
-        body: "A new MSI file has been added to the repository. /n https://github.com/Brizy-Technologies/download/raw/refs/heads/main/bi.msi"
-        to: "santosh@astute.ws"
+        body: ${{ secrets.EMAIL_CONTENT }}
+        to: ${{ secrets.EMAIL_RECIPIENT }}
         from: "support@brizy.com"
         secure: false
 
