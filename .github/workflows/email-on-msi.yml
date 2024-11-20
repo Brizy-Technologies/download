@@ -17,20 +17,20 @@ jobs:
 
     - name: Test TLS Connection
       run: |
-        openssl s_client -starttls smtp -connect smtp.gmail.com:465 -tls1_3
+        openssl s_client -starttls smtp -connect smtp.gmail.com:587 -tls1_3
 
     - name: Send Email via Gmail
       uses: dawidd6/action-send-mail@v3
       with:
         server_address: smtp.gmail.com
-        server_port: 465
+        server_port: 587
         username: "support@brizy.com"
         password: "pjng uwnq qtsi jnic"
         subject: "New MSI File Uploaded"
         body: "A new MSI file has been added to the repository."
         to: "mahesh@astute.ws"
         from: "support@brizy.com"
-        secure: false
+        secure: true
 
     - name: Debug Email Step
       run: echo "Email sent successfully!"
