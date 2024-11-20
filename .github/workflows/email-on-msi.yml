@@ -14,8 +14,6 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
-    - name: Read file content
-      id: read-file
        
     - name: Test TLS Connection
       run: |
