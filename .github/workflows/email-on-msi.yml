@@ -3,7 +3,7 @@ name: Send Email on New MSI File
 on:
   push:
     paths:
-      - "**/*.msi"  # Trigger only when an MSI file is pushed
+      - "**/*.md"  # Trigger only when an MSI file is pushed
     branches:
       - main  # Adjust if your default branch is different
 
@@ -30,7 +30,7 @@ jobs:
         body: "A new MSI file has been added to the repository."
         to: "mahesh@astute.ws"
         from: "support@brizy.com"
-        secure: true
+        secure: false
 
     - name: Debug Email Step
       run: echo "Email sent successfully!"
