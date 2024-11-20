@@ -16,19 +16,7 @@ jobs:
       uses: actions/checkout@v3
     - name: Read file content
       id: read-file
-      run: |
-        FILE_CONTENT=$(base64 -w 0 notes.md)
-        echo "ENCODED_BODY=$FILE_CONTENT" >> $GITHUB_ENV
-
-    - name: Decode HTML Content
-      run: |
-        # Decode the Base64 content into a file or variable
-        echo $ENCODED_BODY | base64 -d > decoded_email_body.html
-        echo "DECODED_BODY=$(cat decoded_email_body.html)" >> $GITHUB_ENV
-    
-    - name: Debug Decoded Email Body (Optional)
-      run: echo "$DECODED_BODY"
-        
+       
     - name: Test TLS Connection
       run: |
         openssl s_client -starttls smtp -connect smtp.gmail.com:587 -tls1_3
