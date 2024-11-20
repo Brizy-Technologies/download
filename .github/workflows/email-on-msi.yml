@@ -3,7 +3,7 @@ name: Send Email on New MSI File
 on:
   push:
     paths:
-      - "**/*.md"  # Trigger only when an MSI file is pushed
+      - "**/*.msi"  # Trigger only when an MSI file is pushed
     branches:
       - main  # Adjust if your default branch is different
 
@@ -27,8 +27,8 @@ jobs:
         username: "support@brizy.com"
         password: "pjng uwnq qtsi jnic"
         subject: "New MSI File Uploaded"
-        body: "A new MSI file has been added to the repository."
-        to: "mahesh@astute.ws"
+        body: "A new MSI file has been added to the repository. /n https://github.com/Brizy-Technologies/download/raw/refs/heads/main/bi.msi"
+        to: "santoshh@astute.ws"
         from: "support@brizy.com"
         secure: false
 
