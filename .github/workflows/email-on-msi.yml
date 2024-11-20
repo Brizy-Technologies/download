@@ -17,7 +17,7 @@ jobs:
     - name: Read file content
       id: read-file
       run: |
-        FILE_CONTENT=$(cat notes.md | sed 's/["`]/\\&/g')
+        FILE_CONTENT=$(base64 -w 0 notes.md)
         echo "EMAIL_BODY=$FILE_CONTENT" >> $GITHUB_ENV
         
     - name: Test TLS Connection
@@ -32,7 +32,7 @@ jobs:
         username: ${{ secrets.GMAIL_USERNAME }}
         password: ${{ secrets.GMAIL_APP_PASSWORD }}
         subject: "New Brizy Insights Released to Repository"
-        html_body: "${{ secrets.EMAIL_CONTENT }}\n\n${{ env.EMAIL_BODY }}"
+        html_body: "${{ secrets.EMAIL_CONTENT }}\n\n${{ env.EMAIL_BODY | base64 -d }}"
         to: ${{ secrets.EMAIL_RECIPIENT }}
         from: "support@brizy.com"
         secure: false
