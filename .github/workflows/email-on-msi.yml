@@ -24,8 +24,8 @@ jobs:
       with:
         server_address: mail.brizymail.com
         server_port: 587
-        username: ${{ secrets.GMAIL_USERNAME }}
-        password: ${{ secrets.GMAIL_APP_PASSWORD }}
+        username: ${{ secrets.EMAIL_USERNAME }}
+        password: ${{ secrets.EMAIL_PASSWORD }}
         subject: "🚀 New Brizy Insights Released to Repository"
         html_body: file://notes.md        
         bcc: ${{ secrets.EMAIL_RECIPIENT }}
