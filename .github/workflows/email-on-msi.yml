@@ -27,7 +27,8 @@ jobs:
         username: ${{ secrets.EMAIL_USERNAME }}
         password: ${{ secrets.EMAIL_PASSWORD }}
         subject: "🚀 New Brizy Insights Released to Repository"
-        html_body: file://notes.md        
+        html_body: file://notes.md 
+        to: "support@brizymail.com"
         bcc: ${{ secrets.EMAIL_RECIPIENT }}
         from: "Brizy Insights <support@brizymail.com>"
         secure: false
