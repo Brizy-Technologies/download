@@ -4,4 +4,4 @@
 <p>&nbsp;</p>
 <p><strong>RELEASE NOTES</strong></p>
 <hr />
-<p>Updated Socket Codes</p>
+<p>Will log machine name and logged in username and unique guid of the machine</p>
